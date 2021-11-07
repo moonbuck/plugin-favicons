@@ -6,30 +6,15 @@
 {{- $favicon_32 := $theme.Favicon.x32 | default $plugin.Favicon.x32 }}
 {{- $favicon_16 := $theme.Favicon.x16 | default $plugin.Favicon.x16 }}
 {{- $favicon_ico := $theme.Favicon.ico | default $plugin.Favicon.ico }}
-{{- $mstile_150 := $theme.MSTile.x150 | default $plugin.MSTile.x150 }}
 {{- $mstile_color := $theme.MSTile.TileColor | default $plugin.MSTile.TileColor }}
 
 
-{{- with $touch_icon }}
-<link rel="apple-touch-icon" sizes="180x180" href="{{ . }}">
-{{ end }}
-{{ with $favicon_32 }}
-<link rel="icon" type="image/png" sizes="32x32" href="{{ . }}">
-{{ end }}
-{{ with $favicon_16 }}
-<link rel="icon" type="image/png" sizes="16x16" href="{{ . }}">
-{{ end }}
-{{ with $favicon_ico }}
-<link rel="shortcut icon" href="{{ . }}">
-{{ end }}
+{{- with $touch_icon }}<link rel="apple-touch-icon" sizes="180x180" href="{{ . }}">{{ end }}
+{{ with $favicon_32 }}<link rel="icon" type="image/png" sizes="32x32" href="{{ . }}">{{ end }}
+{{ with $favicon_16 }}<link rel="icon" type="image/png" sizes="16x16" href="{{ . }}">{{ end }}
+{{ with $favicon_ico }}<link rel="shortcut icon" href="{{ . }}">{{ end }}
 <link rel="manifest" href="/assets/favicons/site.webmanifest">
-{{ if (and $include_svg $theme_color) }}
-<link rel="mask-icon" href="/assets/favicons/safari-pinned-tab.svg" color="{{ $theme_color }}">
-{{ end }}
-{{ with $mstile_color }}
-<meta name="msapplication-TileColor" content="{{ . }}">
-{{ end }}
+{{ if (and $include_svg $theme_color) }}<link rel="mask-icon" href="/assets/favicons/safari-pinned-tab.svg" color="{{ $theme_color }}">{{ end }}
+{{ with $mstile_color }}<meta name="msapplication-TileColor" content="{{ . }}">{{ end }}
 <meta name="msapplication-config" content="/assets/favicons/browserconfig.xml">
-{{ with $theme_color }}
-<meta name="theme-color" content="{{ . }}">
-{{ end }}
+{{ with $theme_color }}<meta name="theme-color" content="{{ . }}">{{ end }}
