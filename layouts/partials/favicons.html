@@ -15,7 +15,7 @@
 {{ with $favicon_32 }}<link rel="icon" type="image/png" sizes="32x32" href="{{ . }}" />{{ end }}
 {{ with $favicon_16 }}<link rel="icon" type="image/png" sizes="16x16" href="{{ . }}" />{{ end }}
 {{ with $favicon_ico }}<link rel="shortcut icon" href="data:image/x-icon;base64,{{ . }}" />{{ end }}
-{{ with $manifest }}<link rel="manifest" href="{ . }}" />{{ end }}
+{{ with $manifest }}<link rel="manifest" href="{{ . }}" />{{ end }}
 {{ with $safari_pinned_tab }}<link rel="mask-icon" href="{{ . }}" color="{{ $theme_color }}" />{{ end }}
 {{ with $mstile_color }}<meta name="msapplication-TileColor" content="{{ . }}">{{ end }}
 {{ with $browser_config }}<meta name="msapplication-config" content="{{ . }}">{{ end }}
