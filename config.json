@@ -1,0 +1,18 @@
+{
+  "outputFormats": {
+    "manifest": {
+      "name": "manifest",
+      "baseName": "manifest",
+      "mediaType": "application/manifest+json",
+      "notAlternative": true,
+      "permalinkable": true
+    }
+  }
+}
+[outputFormats]
+  [outputFormats.manifest]
+    name = "manifest"
+    baseName = "manifest"
+    mediaType = "application/json"
+    notAlternative = "true"
+    permalinkable = "true"
