@@ -22,14 +22,14 @@
 {{ with $favicon_ico }}
 <link rel="shortcut icon" href="{{ . }}">
 {{ end }}
-<link rel="manifest" href="/manifest.json">
+<link rel="manifest" href="/assets/favicons/site.webmanifest">
 {{ if (and $include_svg $theme_color) }}
 <link rel="mask-icon" href="/assets/favicons/safari-pinned-tab.svg" color="{{ $theme_color }}">
 {{ end }}
 {{ with $mstile_color }}
 <meta name="msapplication-TileColor" content="{{ . }}">
 {{ end }}
-
+<meta name="msapplication-config" content="/assets/favicons/browserconfig.xml'>
 {{ with $theme_color }}
 <meta name="theme-color" content="{{ . }}">
 {{ end }}
