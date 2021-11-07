@@ -1,6 +1,1 @@
-{{- $theme := site.Data.plugin_favicons_params }}
-{{- $plugin := site.Data.plugin_favicons.params }}
-{{- $mstile_150 := $theme.MSTile.x150 | default $plugin.MSTile.x150 }}
-{{- $mstile_color := $theme.MSTile.TileColor | default $plugin.MSTile.TileColor }}
-
-<?xml version="1.0" encoding="utf-8"?><browserconfig><msapplication><tile><square150x150logo src="{{ $mstile_150 }}"/><TileColor>{{ $mstile_color }}</TileColor></tile></msapplication></browserconfig>
+<?xml version="1.0" encoding="utf-8"?><browserconfig><msapplication><tile><square150x150logo src=""/><TileColor>#FFFFFF</TileColor></tile></msapplication></browserconfig>
