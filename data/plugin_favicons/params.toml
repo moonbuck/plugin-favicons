@@ -22,14 +22,32 @@
 # Path to the 16x16 pixel image.
 #x16 = "/uploads/2021/favicon-16x16.png"
 
-# Path to the ico image.
-#ico = "/uploads/2021/favicon.ico"
+# Base64 ico image.
+# You can convert .ico to base64 here: https://base64.guru/converter/encode/image/ico
+#ico = "base64"
 
 [AndroidChrome]
 
 # Manually copy/paste your site.webmanifest content into static/assets/favicons/site.webmanifest 
 # or provide a path to a suitable mobile app manifest file … otherwise leave it commented out.
 #Webmanifest = "/assets/favicons/site.webmanifest"
+
+# Path to the 192x192 pixel image. 
+# This goes in the webmanifest but you can store the value here for reference 
+#x192 = "android-chrome-192x192.png"
+
+# Path to the 512x512 pixel image.
+# This goes in the webmanifest but you can store the value here for reference 
+#x512 = "android-chrome-512x512.png"
+
+# Theme color to use in the webmanifest.
+# This goes in the webmanifest but you can store the value here for reference 
+#ThemeColor = "#FFFFFF"
+
+# Background color to use in the webmanifest.
+# This goes in the webmanifest but you can store the value here for reference 
+#BackgroundColor = "#FFFFFF"
+
 
 [MSTile]
 
@@ -39,3 +57,4 @@
 
 # The tile color behind the 150x150 pixel image.
 #TileColor = "#DA532C"
+
