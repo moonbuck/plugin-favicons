@@ -9,10 +9,3 @@
     }
   }
 }
-[outputFormats]
-  [outputFormats.manifest]
-    name = "manifest"
-    baseName = "manifest"
-    mediaType = "application/json"
-    notAlternative = "true"
-    permalinkable = "true"
