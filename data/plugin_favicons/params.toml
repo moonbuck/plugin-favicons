@@ -1,0 +1,46 @@
+# Parameters derived from the use of https://realfavicongenerator.net
+# to generate favicon assets. 
+
+# General theme color for the site (used by Mobile Safari in iOS 15 to paint the background of the status bar).
+#ThemeColor = "#FFFFFF"
+
+[Apple]
+
+# Path to the 180x180 pixel image.
+#TouchIcon = "/uploads/2021/apple-touch-icon.png"
+
+# Whether to include the safari-pinned-tab mask-icon file (because you replaced its contents with your own, for example).
+IncludeSVG = false
+
+[Favicon]
+
+# Path to the 32x32 pixel image.
+#x32 = "/uploads/2021/favicon-32x32.png"
+
+# Path to the 16x16 pixel image.
+#x16 = "/uploads/2021/favicon-16x16.png"
+
+# Path to the ico image.
+#ico = "/uploads/2021/favicon.ico"
+
+[AndroidChrome]
+
+# Path to the 192x192 pixel image.
+#x192 = "/uploads/2021/android-chrome-192x192.png"
+
+# Path to the 512x512 pixel image.
+#x512 = "/uploads/2021/android-chrome-512x512.png"
+
+# Theme color to use in the webmanifest.
+#ThemeColor = "#FFFFFF"
+
+# Background color to use in the webmanifest.
+#BackgroundColor = "#FFFFFF"
+
+[MSTile]
+
+# Path to the 150x150 pixel image.
+#x150 = "/uploads/2021/mstile-150x150.png"
+
+# The tile color behind the 150x150 pixel image.
+#TileColor = "#DA532C"

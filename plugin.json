@@ -1,0 +1,8 @@
+{
+    "version": "1.0.0",
+    "title": "Moondeer's Favicons",
+    "description": "A plugin for injecting favicon metadata.",
+    "includes": [
+      "favicons.html"
+    ]
+  }
