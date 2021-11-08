@@ -123,7 +123,7 @@ The chunk of HTML above is basically what this plugin injects; but, we have to g
 Unzip your favicon package, you get something kinda like:
 ![Unzipped Package](https://raw.githubusercontent.com/moonbuck/plugin-favicons/main/images/unzipped_package.png)
 
-Let’s start with the easy ones. These are the images you simply upload, grab the address, and then plop into that TOML file. Do this for the following parameters by matching the placeholder value to a file in the package you downloaded: Apple.TouchIcon, Favicon.x32, Favicon.x16, Favicon.ico, AndroidChrome.x192, AndroidChrome.x512, and MSTile.x150.
+Let’s start with the easy ones. These are the images you simply upload, grab the address, and then plop into that TOML file. Do this for the following parameters by matching the placeholder value to a file in the package you downloaded: `Apple.TouchIcon`, `Favicon.x32`, `Favicon.x16`, `Favicon.ico`, `AndroidChrome.x192`, `AndroidChrome.x512`, and `MSTile.x150`.
 
 You can also go ahead and fill in all those Hex color values. The `ThemeColor` value at the very top will show up behind the status bar in Mobile Safari in iOS 15.
 
