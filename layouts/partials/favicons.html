@@ -5,6 +5,7 @@
 {{- $safari_pinned_tab := $theme.Apple.SafariPinnedTab | default $plugin.Apple.SafariPinnedTab }}
 {{- $favicon_32 := $theme.Favicon.x32 | default $plugin.Favicon.x32 }}
 {{- $favicon_16 := $theme.Favicon.x16 | default $plugin.Favicon.x16 }}
+{{- $favicon_ico_base64 := $theme.Favicon.icoBase64 | default $plugin.Favicon.icoBase64 }}
 {{- $favicon_ico := $theme.Favicon.ico | default $plugin.Favicon.ico }}
 {{- $manifest := $theme.AndroidChrome.Webmanifest | default $plugin.AndroidChrome.Webmanifest }}
 {{- $browser_config := $theme.MSTile.BrowserConfig | default $plugin.MSTile.BrowserConfig }}
@@ -14,7 +15,8 @@
 {{- with $touch_icon }}<link rel="apple-touch-icon" sizes="180x180" href="{{ . }}" />{{ end }}
 {{ with $favicon_32 }}<link rel="icon" type="image/png" sizes="32x32" href="{{ . }}" />{{ end }}
 {{ with $favicon_16 }}<link rel="icon" type="image/png" sizes="16x16" href="{{ . }}" />{{ end }}
-{{ with $favicon_ico }}<link rel="shortcut icon" href="data:image/x-icon;base64,{{ . }}" />{{ end }}
+{{ with $favicon_ico_base64 }}<link rel="shortcut icon" href="data:image/x-icon;base64,{{ . }}" />{{ else }}
+{{ with $favicon_ico }}<link rel="shortcut icon" href="{{ . }}" />{{ end }}{{ end }}
 {{ with $manifest }}<link rel="manifest" href="{{ . }}" />{{ end }}
 {{ with $safari_pinned_tab }}<link rel="mask-icon" href="{{ . }}" color="{{ $theme_color }}" />{{ end }}
 {{ with $mstile_color }}<meta name="msapplication-TileColor" content="{{ . }}">{{ end }}

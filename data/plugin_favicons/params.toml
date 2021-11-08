@@ -22,9 +22,12 @@
 # Path to the 16x16 pixel image.
 #x16 = "/uploads/2021/favicon-16x16.png"
 
+# Path to regular image. If you upload an ico image it gets converted to jpg
+#ico = "favicon.ico"
+
 # Base64 ico image.
 # You can convert .ico to base64 here: https://base64.guru/converter/encode/image/ico
-#ico = "base64"
+#icoBase64 = "base64"
 
 [AndroidChrome]
 
