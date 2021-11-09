@@ -24,6 +24,9 @@
 
 [Favicon]
 
+# Path to an SVG favicon image.
+# svg = "/favicon.svg"
+
 # Path to the 196x196 pixel image.
 # x196 = "/favicon-196x196.png"
 
