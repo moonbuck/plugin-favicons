@@ -7,68 +7,108 @@
 [Apple]
 
 # Path to the 180x180 pixel image.
+#
 # TouchIcon = "apple-touch-icon.png"
+
+# Path to the 57x57 pixel image.
+#
 # x57 = "/apple-touch-icon-57x57.png"
+
+# Path to the 114x114 pixel image.
+#
 # x114 = "/apple-touch-icon-114x114.png"
+
+# Path to the 72x72 pixel image.
+#
 # x72 = "/apple-touch-icon-72x72.png"
+
+# Path to the 144x144 pixel image.
+#
 # x144 = "/apple-touch-icon-144x144.png"
+
+# Path to the 60x60 pixel image.
+#
 # x60 = "/apple-touch-icon-60x60.png"
+
+# Path to the 120x120 pixel image.
+#
 # x120 = "/apple-touch-icon-120x120.png"
+
+# Path to the 76x76 pixel image.
+#
 # x76 = "/apple-touch-icon-76x76.png"
+
+# Path to the 152x152 pixel image.
+#
 # x152 = "/apple-touch-icon-152x152.png"
 
 # Path to the Safari pinned tab SVG file.
-# Manually copy/paste your SVG content into static/assets/favicons/safari-pinned-tab.svg 
-# or provide a path to a suitable SVG file … otherwise leave it commented out.
-# SafariPinnedTab = "/assets/favicons/safari-pinned-tab.svg"
+# You can create a template file and paste in your SVG or include the file 
+# in a custom theme GitHub repository. For it to be at the root, the location would
+# be static/safari-pinned-tab.svg
+#
+# SafariPinnedTab = "/safari-pinned-tab.svg"
 
 [Favicon]
 
 # Path to an SVG favicon image.
+#
 # svg = "/favicon.svg"
 
 # Path to the 196x196 pixel image.
+#
 # x196 = "/favicon-196x196.png"
 
 # Path to the 128x128 pixel image.
+#
 # x128 = "/favicon-128x128.png"
 
 # Path to the 96x96 pixel image.
+#
 # x96 = "/favicon-96x96.png"
 
 # Path to the 32x32 pixel image.
+#
 # x32 = "favicon-32x32.png"
 
 # Path to the 16x16 pixel image.
+#
 # x16 = "favicon-16x16.png"
 
 # Path to regular image. If you upload an ico image it gets converted to jpg
+#
 # ico = "favicon.ico"
 
 # Base64 ico image.
 # You can convert .ico to base64 here: https://base64.guru/converter/encode/image/ico
+#
 # icoBase64 = "base64"
 
 [AndroidChrome]
 
 # Short name for app-like button.
 # This goes in the webmanifest but you can store the value here for reference 
+#
 # Name = "Short Name"
 
 # Path to the 192x192 pixel image. 
 # This goes in the webmanifest but you can store the value here for reference 
+#
 # x192 = "android-chrome-192x192.png"
 
 # Path to the 512x512 pixel image.
 # This goes in the webmanifest but you can store the value here for reference 
+#
 # x512 = "android-chrome-512x512.png"
 
 # Theme color to use in the webmanifest.
 # This goes in the webmanifest but you can store the value here for reference 
+#
 # ThemeColor = "#FFFFFF"
 
 # Background color to use in the webmanifest.
 # This goes in the webmanifest but you can store the value here for reference 
+#
 # BackgroundColor = "#FFFFFF"
 
 # In this plugin or your custom theme, create template 'static/site.webmanifest'
@@ -96,40 +136,64 @@
 #     "background_color": "[AndroidChrome.BackgroundColor]",
 #     "display": "standalone"
 # }
-  
-# Once the file is in place, uncomment the appropriate entry
+#
+# Once the file is in place, uncomment the appropriate entry below.
+#
 # Webmanifest = "/site.webmanifest"
 # Webmanifest = "/site.webmanifest.txt"
 
 
 [MSTile]
 
+# Short name for app-like button.
+#
+# ApplicationName = "Short Name"
+
+# Path to the 70x70 pixel image.
+#
+# x70 = "/mstile-70x70.png"
+
+# Path to the 144x144 pixel image.
+#
+# x144 = "/mstile-144x144.png"
+
+# Path to the 150x150 pixel image.
+#
+# x150 = "/mstile-150x150.png"
+
+# Path to the 310x150 pixel image.
+#
+# Widex150 = "/mstile-310x150.png"
+
+# Path to the 310x310 pixel image.
+#
+# x310 = "/mstile-310x310.png"
+
+# The tile color behind the 150x150 pixel image.
+#
+# TileColor = "#DA532C"
+
+# All of the above (with the exception of ApplicationName) can have 
+# their meta tags replaced with a single link to an XML file. For this
+# to happen, here is what you must to:
+#
+# In this plugin or your custom theme, create template 'static/browserconfig.xml'
+#
+# Replace bracketed variable names with their values.
 #
 # <?xml version="1.0" encoding="utf-8"?>
 # <browserconfig>
 #   <msapplication>
 #     <tile>
-#       <square70x70logo src="/mstile-70x70.png"/>
-#       <square144x144logo src="/mstile-144x144.png"/>
-#       <square150x150logo src="/mstile-150x150.png"/>
-#       <wide310x150logo src="/mstile-310x150.png"/>
-#       <square310x310logo src="/mstile-310x310.png"/>
-#       <TileColor>#DA532C</TileColor>
+#       <square70x70logo src="[MSTile.x70]"/>
+#       <square144x144logo src="[MSTile.x144]"/>
+#       <square150x150logo src="[MSTile.x150]"/>
+#       <wide310x150logo src="[MSTile.Widex150]"/>
+#       <square310x310logo src="[MSTile.x310]"/>
+#       <TileColor>[MSTile.TileColor]</TileColor>
 #     </tile>
 #   </msapplication>
 # </browserconfig>
-  
+# Once the file is in place, uncomment the entry below.
+#
 # BrowserConfig = "/browserconfig.xml"
-
-# Short name for app-like button.
-# ApplicationName = "Short Name"
-
-# x70 = "/mstile-70x70.png"
-# x144 = "/mstile-144x144.png"
-# x150 = "/mstile-150x150.png"
-# Widex150 = "/mstile-310x150.png"
-# x310 = "/mstile-310x310.png"
-
-# The tile color behind the 150x150 pixel image.
-# TileColor = "#DA532C"
-
