@@ -1,0 +1,4 @@
++++
+outputs = ['webappmanifest']
+type = 'webmanifest'
++++

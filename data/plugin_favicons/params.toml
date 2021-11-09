@@ -51,9 +51,9 @@
 
 [AndroidChrome]
 
-# Manually copy/paste your site.webmanifest content into static/assets/favicons/site.webmanifest 
-# or provide a path to a suitable mobile app manifest file … otherwise leave it commented out.
-# Webmanifest = "/assets/favicons/site.webmanifest"
+# Short name for app-like button.
+# This goes in the webmanifest but you can store the value here for reference 
+# Name = "Short Name"
 
 # Path to the 192x192 pixel image. 
 # This goes in the webmanifest but you can store the value here for reference 
@@ -71,12 +71,55 @@
 # This goes in the webmanifest but you can store the value here for reference 
 # BackgroundColor = "#FFFFFF"
 
+# In this plugin or your custom theme, create template 'static/site.webmanifest'
+# If you're using GitHub with your custom them, add a `.txt` extension so the file
+# may be cloned from your repository.
+#
+# Replace bracketed variable names with their values.
+#
+# {
+#     "name": "[AndroidChrome.Name]",
+#     "short_name": "[AndroidChrome.Name]",
+#     "icons": [
+#         {
+#             "src": "[AndroidChrome.x192]",
+#             "sizes": "192x192",
+#             "type": "image/png"
+#         },
+#         {
+#             "src": "[AndroidChrome.x512]",
+#             "sizes": "512x512",
+#             "type": "image/png"
+#         }
+#     ],
+#     "theme_color": "[AndroidChrome.ThemeColor]",
+#     "background_color": "[AndroidChrome.BackgroundColor]",
+#     "display": "standalone"
+# }
+  
+# Once the file is in place, uncomment the appropriate entry
+# Webmanifest = "/site.webmanifest"
+# Webmanifest = "/site.webmanifest.txt"
+
 
 [MSTile]
 
-# Manually copy/paste your browserconfig.xml content into static/assets/favicons/browserconfig.xml 
-# or provide a path to a suitable browserconfig file … otherwise leave it commented out.
-# BrowserConfig = "/assets/favicons/browserconfig.xml"
+#
+# <?xml version="1.0" encoding="utf-8"?>
+# <browserconfig>
+#   <msapplication>
+#     <tile>
+#       <square70x70logo src="/mstile-70x70.png"/>
+#       <square144x144logo src="/mstile-144x144.png"/>
+#       <square150x150logo src="/mstile-150x150.png"/>
+#       <wide310x150logo src="/mstile-310x150.png"/>
+#       <square310x310logo src="/mstile-310x310.png"/>
+#       <TileColor>#DA532C</TileColor>
+#     </tile>
+#   </msapplication>
+# </browserconfig>
+  
+# BrowserConfig = "/browserconfig.xml"
 
 # Short name for app-like button.
 # ApplicationName = "Short Name"

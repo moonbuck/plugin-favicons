@@ -1,6 +1,8 @@
 # plugin-favicons
 A plugin for [Micro.blog](https://micro.blog "Micro.blog") that injects favicon meta into the page `<head>`. I used [https://realfavicongenerator.net](https://realfavicongenerator.net) to generate my favicons so this plugin basically gets the generated favicon package into your Hugo theme the best it can.
 
+Update: I stumbled upon [https://favicomatic.com](https://favicomatic.com), which generates a bunch more sizes. So I added support for them. I also added support for an SVG favicon.
+
 There is only one partial. It lives at `layouts/partials/favicons.html`
 and looks like this:
 

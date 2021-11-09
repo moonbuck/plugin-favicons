@@ -31,9 +31,9 @@
 
 {{/* Generic */}}
 {{- $ico_rel := "shortcut icon" -}}
-{{ with $favicon_svg }}{{- $ico_rel := "alternate icon" -}}<link rel="icon" type="image/svg+xml" href="{{ . }}">{{- end -}}
-{{ with $favicon_ico_base64 }}<link rel="{{ $ico_rel }}" href="data:image/x-icon;base64,{{ . }}" />{{ else }}
-{{ with $favicon_ico }}<link rel="{{ $ico_rel }}" href="{{ . }}" />{{ end }}{{ end }}
+{{ with $favicon_svg }}{{- $ico_rel = "alternate icon" -}}<link rel="icon" type="image/svg+xml" href="{{ . }}">{{- end -}}
+{{/* with $favicon_ico_base64 }}<link rel="{{ $ico_rel }}" type="image/png" href="data:image/png;base64,{{ . }}" />{{ else }}
+{{ with $favicon_ico }}<link rel="{{ $ico_rel }}" href="{{ . }}" />{{ end }}{{ end */}}
 {{ with $favicon_196 }}<link rel="icon" type="image/png" href="{{ . }}" sizes="196x196" />{{ end }}
 {{ with $favicon_96 }}<link rel="icon" type="image/png" href="{{ . }}" sizes="96x96" />{{ end }}
 {{ with $favicon_32 }}<link rel="icon" type="image/png" href="{{ . }}" sizes="32x32" />{{ end }}
