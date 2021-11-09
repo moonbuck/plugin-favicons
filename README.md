@@ -50,7 +50,7 @@ If you want it all, start by selecting `Every damn size, sir!`.
 If you really want it all, click `advanced settings` and starting ticking boxes.
 ![Favic-O-Matic Advanced](https://raw.githubusercontent.com/moonbuck/plugin-favicons/main/images/favic-o-matic-advanced.jpeg)
 
-Download and zip … you oughta have something kinda like:
+Download and unzip … you oughta have something kinda like:
 
 ![Favic-O-Matic Package](https://raw.githubusercontent.com/moonbuck/plugin-favicons/main/images/favic-o-matic-package.jpeg)
 
