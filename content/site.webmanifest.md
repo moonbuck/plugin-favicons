@@ -1,4 +1,0 @@
-+++
-outputs = ['webappmanifest']
-type = 'webmanifest'
-+++
