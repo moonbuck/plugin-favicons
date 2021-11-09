@@ -2,13 +2,30 @@
 {{- $plugin := site.Data.plugin_favicons.params }}
 {{- $theme_color := ($theme.ThemeColor | default $plugin.ThemeColor) | default "#FFFFFF" }}
 {{- $touch_icon := $theme.Apple.TouchIcon | default $plugin.Apple.TouchIcon }}
+{{- $touch_icon_57 := $theme.Apple.x57 | default $plugin.Apple.x57 }}
+{{- $touch_icon_114 := $theme.Apple.x114 | default $plugin.Apple.x114 }}
+{{- $touch_icon_72 := $theme.Apple.x72 | default $plugin.Apple.x72 }}
+{{- $touch_icon_144 := $theme.Apple.x144 | default $plugin.Apple.x144 }}
+{{- $touch_icon_60 := $theme.Apple.x60 | default $plugin.Apple.x60 }}
+{{- $touch_icon_120 := $theme.Apple.x120 | default $plugin.Apple.x120 }}
+{{- $touch_icon_76 := $theme.Apple.x76 | default $plugin.Apple.x76 }}
+{{- $touch_icon_152 := $theme.Apple.x152 | default $plugin.Apple.x152 }}
 {{- $safari_pinned_tab := $theme.Apple.SafariPinnedTab | default $plugin.Apple.SafariPinnedTab }}
+{{- $favicon_196pn := $theme.Favicon.x196 | default $plugin.Favicon.x196 }}
+{{- $favicon_128 := $theme.Favicon.x128 | default $plugin.Favicon.x128 }}
+{{- $favicon_96 := $theme.Favicon.x96 | default $plugin.Favicon.x96 }}
 {{- $favicon_32 := $theme.Favicon.x32 | default $plugin.Favicon.x32 }}
 {{- $favicon_16 := $theme.Favicon.x16 | default $plugin.Favicon.x16 }}
 {{- $favicon_ico_base64 := $theme.Favicon.icoBase64 | default $plugin.Favicon.icoBase64 }}
 {{- $favicon_ico := $theme.Favicon.ico | default $plugin.Favicon.ico }}
 {{- $manifest := $theme.AndroidChrome.Webmanifest | default $plugin.AndroidChrome.Webmanifest }}
 {{- $browser_config := $theme.MSTile.BrowserConfig | default $plugin.MSTile.BrowserConfig }}
+{{- $mstile_name := $theme.MSTile.ApplicationName | default $plugin.MSTile.ApplicationName -}}
+{{- $mstile_70 := $theme.MSTile.x70 | default $plugin.MSTile.x70 -}}
+{{- $mstile_144 := $theme.MSTile.x144 | default $plugin.MSTile.x144 -}}
+{{- $mstile_150 := $theme.MSTile.x150 | default $plugin.MSTile.x150 -}}
+{{- $mstile_w150 := $theme.MSTile.Widex150 | default $plugin.MSTile.Widex150 -}}
+{{- $mstile_310 := $theme.MSTile.x310 | default $plugin.MSTile.x310 -}}
 {{- $mstile_color := $theme.MSTile.TileColor | default $plugin.MSTile.TileColor }}
 
 
@@ -22,3 +39,27 @@
 {{ with $mstile_color }}<meta name="msapplication-TileColor" content="{{ . }}">{{ end }}
 {{ with $browser_config }}<meta name="msapplication-config" content="{{ . }}">{{ end }}
 {{ with $theme_color }}<meta name="theme-color" content="{{ . }}">{{ end }}
+
+
+{{ with $touch_icon_57 }}<link rel="apple-touch-icon-precomposed" sizes="57x57" href="{{ . }}" />{{ end }}
+{{ with $touch_icon_114 }}<link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ . }}" />{{ end }}
+{{ with $touch_icon_72 }}<link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ . }}" />{{ end }}
+{{ with $touch_icon_144 }}<link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ . }}" />{{ end }}
+{{ with $touch_icon_60 }}<link rel="apple-touch-icon-precomposed" sizes="60x60" href="{{ . }}" />{{ end }}
+{{ with $touch_icon_120 }}<link rel="apple-touch-icon-precomposed" sizes="120x120" href="{{ . }}" />{{ end }}
+{{ with $touch_icon_76 }}<link rel="apple-touch-icon-precomposed" sizes="76x76" href="{{ . }}" />{{ end }}
+{{ with $touch_icon_152 }}<link rel="apple-touch-icon-precomposed" sizes="152x152" href="{{ . }}" />{{ end }}
+{{ with $favicon_196 }}<link rel="icon" type="image/png" href="{{ . }}" sizes="196x196" />{{ end }}
+{{ with $favicon_96 }<link rel="icon" type="image/png" href="{{ . }}" sizes="96x96" />{{ end }}
+{{ with $favicon_32 }<link rel="icon" type="image/png" href="{{ . }}" sizes="32x32" />{{ end }}
+{{ with $favicon_16 }<link rel="icon" type="image/png" href="{{ . }}" sizes="16x16" />{{ end }}
+{{ with $favicon_128 }<link rel="icon" type="image/png" href="{{ . }}" sizes="128x128" />{{ end }}
+{{ with $mstile_name }}<meta name="application-name" content="{{ . }}"/>{{ end }}
+{{ with $mstile_color }}<meta name="msapplication-TileColor" content="{{ . }}" />{{ end }}
+{{ with $mstile_144 }}<meta name="msapplication-TileImage" content="{{ . }}" />{{ end }}
+{{ with $mstile_70 }}<meta name="msapplication-square70x70logo" content="https://moondeer.blog/mstile-70x70.png" />{{ end }}
+{{ with $mstile_150 }}<meta name="msapplication-square150x150logo" content="https://moondeer.blog/mstile-150x150.png" />{{ end }}
+{{ with $mstile_w150 }}<meta name="msapplication-wide310x150logo" content="https://moondeer.blog/mstile-310x150.png" />{{ end }}
+{{ with $mstile_310 }}<meta name="msapplication-square310x310logo" content="{{ . }}" />{{ end }}
+{{- $feed := printf "%s/feed.xml" site.BaseURL -}}
+<meta name="msapplication-notification" content="frequency=30;polling-uri=https://notifications.buildmypinnedsite.com/?feed={{ $feed }}&amp;id=1;polling-uri2=https://notifications.buildmypinnedsite.com/?feed={{ $feed }}&amp;id=2;polling-uri3=https://notifications.buildmypinnedsite.com/?feed={{ $feed }}&amp;id=3;polling-uri4=https://notifications.buildmypinnedsite.com/?feed={{ $feed }}&amp;id=4;polling-uri5=https://notifications.buildmypinnedsite.com/?feed={{ $feed }}&amp;id=5;cycle=1" />
