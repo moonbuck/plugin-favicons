@@ -1,0 +1,12 @@
+home = [
+  "HTML",
+  "RSS",
+  "JSON",
+  "RSD",
+  "ArchiveHTML",
+  "ArchiveJSON",
+  "PhotosJSON",
+  "PodcastXML",
+  "PodcastJSON",
+  "WebAppManifest"
+  ]

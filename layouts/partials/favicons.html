@@ -19,7 +19,6 @@
 {{- $favicon_16 := $theme.Favicon.x16 | default $plugin.Favicon.x16 }}
 {{- $favicon_ico_base64 := $theme.Favicon.icoBase64 | default $plugin.Favicon.icoBase64 }}
 {{- $favicon_ico := $theme.Favicon.ico | default $plugin.Favicon.ico }}
-{{- $manifest := $theme.AndroidChrome.Webmanifest | default $plugin.AndroidChrome.Webmanifest }}
 {{- $browser_config := $theme.MSTile.BrowserConfig | default $plugin.MSTile.BrowserConfig }}
 {{- $mstile_name := $theme.MSTile.ApplicationName | default $plugin.MSTile.ApplicationName -}}
 {{- $mstile_70 := $theme.MSTile.x70 | default $plugin.MSTile.x70 -}}
@@ -41,7 +40,7 @@
 {{ with $favicon_128 }}<link rel="icon" type="image/png" href="{{ . }}" sizes="128x128" />{{ end }}
 
 {{/* Google */}}
-{{ with $manifest }}<link rel="manifest" href="{{ . }}" />{{ end }}
+<link rel="manifest" href="/manifest.json" />
 
 {{/* Apple */}}
 {{ with $touch_icon }}<link rel="apple-touch-icon" sizes="180x180" href="{{ . }}" />{{ end }}
