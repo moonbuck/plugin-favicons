@@ -106,11 +106,13 @@
 #
 # BackgroundColor = "#FFFFFF"
 
+################################
+# Using the AndroidChrome assets
+################################
+
 # OPTION 1: Manual File Creation
 #
-# In this plugin or your custom theme, create template 'static/site.webmanifest'
-# If you're using GitHub with your custom them, add a `.txt` extension so the file
-# may be cloned from your repository.
+# In this plugin or your custom theme, create template 'static/manifest.json'
 #
 # Replace bracketed variable names with their values.
 #
@@ -133,11 +135,10 @@
 #     "background_color": "[AndroidChrome.BackgroundColor]",
 #     "display": "standalone"
 # }
+
+# If you went and stuck the file somewhere else, set this variable and uncomment it.
 #
-# Once the file is in place, uncomment the appropriate entry below.
-#
-# Webmanifest = "/site.webmanifest"
-# Webmanifest = "/site.webmanifest.txt"
+# Webmanifest = "/manifest.json"
 
 # OPTION 2: Automatic File Creation
 #
@@ -176,11 +177,12 @@
 #   "PhotosJSON",
 #   "PodcastXML",
 #   "PodcastJSON",
-#   "WebAppManifest"
+#   "WebAppManifest",
+#   "BrowserConfig"
 #   ]
 #
 # You should now be configured to build a json file in your root directory called 'manifest.json'.
-# Make sure the 'Webmanifest' variable under option 1 is commented out.
+# Make sure the 'Webmanifest' variable under option 1 is commented out or set to '/manifest.json'.
 
 
 
@@ -214,11 +216,13 @@
 #
 # TileColor = "#DA532C"
 
-# All of the above (with the exception of ApplicationName) can have 
-# their meta tags replaced with a single link to an XML file. For this
-# to happen, here is what you must to:
+################################
+# Using the MSTile assets
+################################
+
+# OPTION 1: Manual File Creation
 #
-# In this plugin or your custom theme, create template 'static/browserconfig.xml'
+# In this plugin or your custom theme, create a template 'static/browserconfig.xml'
 #
 # Replace bracketed variable names with their values.
 #
@@ -235,6 +239,44 @@
 #     </tile>
 #   </msapplication>
 # </browserconfig>
-# Once the file is in place, uncomment the entry below.
+
+# If you went and stuck the file somewhere else, set this value and uncomment.
 #
 # BrowserConfig = "/browserconfig.xml"
+
+# OPTION 2: Automatic File Creation
+#
+# Create a template (or append if you did this for the manifest) in your custom 
+# theme located at config/_default/outputFormats.toml and add the following output format:
+# 
+# [BrowserConfig]
+# mediaType = "application/xml"
+# baseName = "browserconfig"
+# isPlainText = true
+# isHTML = false
+# notAlternative = true
+#
+# Scroll down to the blank theme files in your custom theme and open config.json.
+# Look for the 'outputs' key and then the 'home' key. Copy all the current outputs
+# for 'home'.
+# 
+# Create a template in your custom theme located at config/_default/outputs.toml
+# Create an entry for 'home' with all those copied output values. Then add one more
+# called 'BrowserConfig'. My file looks like this.
+#
+# home = [
+#   "HTML",
+#   "RSS",
+#   "JSON",
+#   "RSD",
+#   "ArchiveHTML",
+#   "ArchiveJSON",
+#   "PhotosJSON",
+#   "PodcastXML",
+#   "PodcastJSON",
+#   "WebAppManifest",
+#   "BrowserConfig"
+#   ]
+#
+# You should now be configured to build a json file in your root directory called 'manifest.json'.
+# Make sure the 'BrowserConfig' variable under option 1 is commented out or set to '/browserconfig.xml'.
