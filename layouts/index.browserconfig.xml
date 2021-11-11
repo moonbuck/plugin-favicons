@@ -1,13 +1,18 @@
+{{- $theme := site.Data.plugin_favicons_params }}
+{{- $plugin := site.Data.plugin_favicons.params }}
+{{- $data := $theme.MSTile | default $plugin.MSTile -}}
+{{- with $data -}}
 <?xml version="1.0" encoding="utf-8"?>
 <browserconfig>
   <msapplication>
     <tile>
-      <square70x70logo src="/mstile-70x70.png"/>
-      <square144x144logo src="/mstile-144x144.png"/>
-      <square150x150logo src="/mstile-150x150.png"/>
-      <wide310x150logo src="/mstile-310x150.png"/>
-      <square310x310logo src="/mstile-310x310.png"/>
-      <TileColor>#DA532C</TileColor>
+      {{ with .x70 }}<square70x70logo src="{{ . }}"/>{{ end }}
+      {{ with .x144 }}<square144x144logo src="{{ . }}"/>{{ end }}
+      {{ with .x150 }}<square150x150logo src="{{ . }}"/>{{ end }}
+      {{ with .Widex150 }}<wide310x150logo src="{{ . }}"/>{{ end }}
+      {{ with .x310 }}<square310x310logo src="{{ . }}"/>{{ end }}
+      {{ with .TileColor }}<TileColor>{{ . }}</TileColor>{{ end }}
     </tile>
   </msapplication>
 </browserconfig>
+{{- end -}}

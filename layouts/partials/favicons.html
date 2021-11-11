@@ -19,14 +19,8 @@
 {{- $favicon_16 := $theme.Favicon.x16 | default $plugin.Favicon.x16 }}
 {{- $favicon_ico_base64 := $theme.Favicon.icoBase64 | default $plugin.Favicon.icoBase64 }}
 {{- $favicon_ico := $theme.Favicon.ico | default $plugin.Favicon.ico }}
-{{- $browser_config := $theme.MSTile.BrowserConfig | default $plugin.MSTile.BrowserConfig }}
+{{- $browser_config := ($theme.MSTile.BrowserConfig | default $plugin.MSTile.BrowserConfig) | default "/browserconfig.xml" }}
 {{- $mstile_name := $theme.MSTile.ApplicationName | default $plugin.MSTile.ApplicationName -}}
-{{- $mstile_70 := $theme.MSTile.x70 | default $plugin.MSTile.x70 -}}
-{{- $mstile_144 := $theme.MSTile.x144 | default $plugin.MSTile.x144 -}}
-{{- $mstile_150 := $theme.MSTile.x150 | default $plugin.MSTile.x150 -}}
-{{- $mstile_w150 := $theme.MSTile.Widex150 | default $plugin.MSTile.Widex150 -}}
-{{- $mstile_310 := $theme.MSTile.x310 | default $plugin.MSTile.x310 -}}
-{{- $mstile_color := $theme.MSTile.TileColor | default $plugin.MSTile.TileColor }}
 {{- $manifest := ($theme.AndroidChrome.Webmanifest | default $plugin.AndroidChrome.Webmanifest) | default "/manifest.json" -}}
 
 {{/* Generic */}}
@@ -59,14 +53,6 @@
 
 {{/* Microsoft */}}
 {{ with $mstile_name }}<meta name="application-name" content="{{ . }}"/>{{ end }}
-{{ with $browser_config }}<meta name="msapplication-config" content="{{ . }}">
-{{ else }}
-{{ with $mstile_color }}<meta name="msapplication-TileColor" content="{{ . }}" />{{ end }}
-{{ with $mstile_144 }}<meta name="msapplication-TileImage" content="{{ . }}" />{{ end }}
-{{ with $mstile_70 }}<meta name="msapplication-square70x70logo" content="https://moondeer.blog/mstile-70x70.png" />{{ end }}
-{{ with $mstile_150 }}<meta name="msapplication-square150x150logo" content="https://moondeer.blog/mstile-150x150.png" />{{ end }}
-{{ with $mstile_w150 }}<meta name="msapplication-wide310x150logo" content="https://moondeer.blog/mstile-310x150.png" />{{ end }}
-{{ with $mstile_310 }}<meta name="msapplication-square310x310logo" content="{{ . }}" />{{ end }}
-{{ end }}
+<meta name="msapplication-config" content="{{ $browser_config }}">
 {{- $feed := printf "%s/feed.xml" site.BaseURL -}}
 <meta name="msapplication-notification" content="frequency=30;polling-uri=https://notifications.buildmypinnedsite.com/?feed={{ $feed }}&amp;id=1;polling-uri2=https://notifications.buildmypinnedsite.com/?feed={{ $feed }}&amp;id=2;polling-uri3=https://notifications.buildmypinnedsite.com/?feed={{ $feed }}&amp;id=3;polling-uri4=https://notifications.buildmypinnedsite.com/?feed={{ $feed }}&amp;id=4;polling-uri5=https://notifications.buildmypinnedsite.com/?feed={{ $feed }}&amp;id=5;cycle=1" />
