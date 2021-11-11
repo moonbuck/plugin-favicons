@@ -27,6 +27,7 @@
 {{- $mstile_w150 := $theme.MSTile.Widex150 | default $plugin.MSTile.Widex150 -}}
 {{- $mstile_310 := $theme.MSTile.x310 | default $plugin.MSTile.x310 -}}
 {{- $mstile_color := $theme.MSTile.TileColor | default $plugin.MSTile.TileColor }}
+{{- $manifest := ($theme.AndroidChrome.Webmanifest | default $plugin.AndroidChrome.Webmanifest) | default "/manifest.json" -}}
 
 {{/* Generic */}}
 {{- $ico_rel := "shortcut icon" -}}
@@ -40,7 +41,7 @@
 {{ with $favicon_128 }}<link rel="icon" type="image/png" href="{{ . }}" sizes="128x128" />{{ end }}
 
 {{/* Google */}}
-<link rel="manifest" href="/manifest.json" />
+<link rel="manifest" href="{{ $manifest }}" />
 
 {{/* Apple */}}
 {{ with $touch_icon }}<link rel="apple-touch-icon" sizes="180x180" href="{{ . }}" />{{ end }}
