@@ -1,21 +1,18 @@
-{{- $theme := site.Data.plugin_favicons_params }}
-{{- $plugin := site.Data.plugin_favicons.params }}
-{{- $data := $theme.AndroidChrome | default $plugin.AndroidChrome -}}
-{{- with $data -}}
+{{ with (.Scratch.Get "plugin-favicons.Parameters").AndroidChrome -}}
 {
     {{- with .Name -}}
     "name": "{{ . }}",
     "short_name": "{{ . }}",
     {{- end -}}
     "icons": [
-      {{- with .x192 -}}
+      {{- with .X192 -}}
         {
             "src": "{{ . }}",
             "sizes": "192x192",
             "type": "image/png"
         },
       {{- end -}}
-      {{- with .x512 -}}
+      {{- with .X512 -}}
         {
             "src": "{{ . }}",
             "sizes": "512x512",
@@ -28,4 +25,4 @@
     "display": "standalone"
 }
 
-{{- end -}}
+{{- end }}
