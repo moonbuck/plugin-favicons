@@ -12,9 +12,8 @@
   {{- $version := .Config.Version -}}
   {{- printf "\n<!-- Favicons v%s (built on %s) -->\n" $version $time | safeHTML -}}
   
-
-{{ with .Favicon.SVG }}<link rel="alternate icon" type="image/svg+xml" href="{{ . }}">{{ end }}
 {{ with .Favicon.ICOBase64 }}<link rel="shortcut icon" type="image/png" href="data:image/png;base64,{{ . }}" />{{ else }}{{ with .Favicon.ICO }}<link rel="shortcut icon" href="{{ . }}" />{{ end }}{{ end }}
+{{ with .Favicon.SVG }}<link rel="alternate icon" type="image/svg+xml" href="{{ . }}">{{ end }}
 {{ with .Favicon.X196 }}<link rel="icon" type="image/png" href="{{ . }}" sizes="196x196" />{{ end }}
 {{ with .Favicon.X96 }}<link rel="icon" type="image/png" href="{{ . }}" sizes="96x96" />{{ end }}
 {{ with .Favicon.X32 }}<link rel="icon" type="image/png" href="{{ . }}" sizes="32x32" />{{ end }}
