@@ -36,7 +36,7 @@
 {{ with .Apple.X120 }}<link rel="apple-touch-icon-precomposed" sizes="120x120" href="{{ . }}" />{{ end }}
 {{ with .Apple.X76 }}<link rel="apple-touch-icon-precomposed" sizes="76x76" href="{{ . }}" />{{ end }}
 {{ with .Apple.X152 }}<link rel="apple-touch-icon-precomposed" sizes="152x152" href="{{ . }}" />{{ end }}
-{{ if .Apple.SafariPinnedTab }}<link rel="mask-icon" href="{{ .Apple.SafariPinnedTab }}" color="{{ $theme_color }}" />{{ end }}
+{{ if .Apple.SafariPinnedTab }}<link rel="mask-icon" href="{{ .Apple.SafariPinnedTab }}" color="{{ .Apple.ThemeColor }}" />{{ end }}
 {{ with .Apple.ThemeColor }}<meta name="theme-color" content="{{ . }}">{{ end }}
 
 
