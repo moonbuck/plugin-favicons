@@ -7,97 +7,66 @@
   Initialize variables with default parameter values
   to ensure every parameter has a map entry. 
   ***************************************************/ -}}
+{{- $Config := dict 
+  "Version" "" 
+  "DebugPrint" false -}}
 
-{{- $Config_Version := "" -}}
-{{- $Config_DebugPrint := false -}}
+{{- $Apple := dict 
+  "ThemeColor" ""
+  "TouchIcon" ""
+  "X57" ""
+  "X114" ""
+  "X72" ""
+  "X144" ""
+  "X60" ""
+  "X120" ""
+  "X76" ""
+  "X152" ""
+  "SafariPinnedTab" "" -}}
+  
+{{- $Favicon := dict 
+  "SVG" ""
+  "X196" ""
+  "X128" ""
+  "X96" ""
+  "X32" ""
+  "X16" ""
+  "ICO" ""
+  "ICOBase64" "" -}}
+  
+{{- $MSTile := dict 
+  "ApplicationName" ""
+  "X70" ""
+  "X144" ""
+  "X150" ""
+  "WideX150" ""
+  "X310" ""
+  "TileColor" ""
+  "BrowserConfig" "/browserconfig.xml" -}}
 
-{{- $Apple_ThemeColor := "" -}}
-{{- $Apple_TouchIcon := "" -}}
-{{- $Apple_x57 := "" -}}
-{{- $Apple_x114 := "" -}}
-{{- $Apple_x72 := "" -}}
-{{- $Apple_x144 := "" -}}
-{{- $Apple_x60 := "" -}}
-{{- $Apple_x120 := "" -}}
-{{- $Apple_x76 := "" -}}
-{{- $Apple_x152 := "" -}}
-{{- $Apple_SafariPinnedTab := "" -}}
+{{- $AndroidChrome := dict 
+  "Name" ""
+  "X192" ""
+  "X512" ""
+  "ThemeColor" ""
+  "BackgroundColor" ""
+  "Webmanifest" "/manifest.json" -}}
 
-{{- $Favicon_SVG := "" -}}
-{{- $Favicon_X196 := "" -}}
-{{- $Favicon_X128 := "" -}}
-{{- $Favicon_X96 := "" -}}
-{{- $Favicon_X32 := "" -}}
-{{- $Favicon_X16 := "" -}}
-{{- $Favicon_ICO := "" -}}
-{{- $Favicon_ICOBase64 := "" -}}
-
-{{- $MSTile_ApplicationName := "" -}}
-{{- $MSTile_X70 := "" -}}
-{{- $MSTile_X144 := "" -}}
-{{- $MSTile_X150 := "" -}}
-{{- $MSTile_WideX150 := "" -}}
-{{- $MSTile_X310 := "" -}}
-{{- $MSTile_TileColor := "" -}}
-{{- $MSTile_BrowserConfig := "/browserconfig.xml" -}}
-
-
-{{- $AndroidChrome_Name := "" -}}
-{{- $AndroidChrome_X192 := "" -}}
-{{- $AndroidChrome_X512 := "" -}}
-{{- $AndroidChrome_ThemeColor := "" -}}
-{{- $AndroidChrome_BackgroundColor := "" -}}
-{{- $AndroidChrome_Webmanifest := "/manifest.json" -}}
-
+{{- $Parameters := dict
+  "Config" $Config
+  "Apple" $Apple
+  "Favicon" $Favicon
+  "MSTile" $MSTile
+  "AndroidChrome" $AndroidChrome -}}
+  
 {{- /************************************************
   Override the default parameter values with values
   found in the plugin data files.
   ***************************************************/ -}}
 
 {{- with site.Data.plugin_favicons -}}
-
-{{- with .Config.Version }}{{ $Config_Version = . }}{{ end -}}
-{{- if (isset .Config "DebugPrint") }}{{ $Config_DebugPrint = .Config.DebugPrint }}{{ end -}}
-
-{{- with .Apple.ThemeColor }}{{- $Apple_ThemeColor = . }}{{ end -}}
-{{- with .Apple.TouchIcon }}{{- $Apple_TouchIcon = . }}{{ end -}}
-{{- with .Apple.X57 }}{{- $Apple_x57 = . }}{{ end -}}
-{{- with .Apple.X114 }}{{- $Apple_x114 = . }}{{ end -}}
-{{- with .Apple.X72 }}{{- $Apple_x72 = . }}{{ end -}}
-{{- with .Apple.X144 }}{{- $Apple_x144 = . }}{{ end -}}
-{{- with .Apple.X60 }}{{- $Apple_x60 = . }}{{ end -}}
-{{- with .Apple.X120 }}{{- $Apple_x120 = . }}{{ end -}}
-{{- with .Apple.X76 }}{{- $Apple_x76 = . }}{{ end -}}
-{{- with .Apple.X152 }}{{- $Apple_x152 = . }}{{ end -}}
-{{- with .Apple.SafariPinnedTab }}{{- $Apple_SafariPinnedTab = . }}{{ end -}}
-
-{{- with .Favicon.SVG }}{{- $Favicon_SVG = . }}{{ end -}}
-{{- with .Favicon.X196 }}{{- $Favicon_X196 = . }}{{ end -}}
-{{- with .Favicon.X128 }}{{- $Favicon_X128 = . }}{{ end -}}
-{{- with .Favicon.X96 }}{{- $Favicon_X96 = . }}{{ end -}}
-{{- with .Favicon.X32 }}{{- $Favicon_X32 = . }}{{ end -}}
-{{- with .Favicon.X16 }}{{- $Favicon_X16 = . }}{{ end -}}
-{{- with .Favicon.ICO }}{{- $Favicon_ICO = . }}{{ end -}}
-{{- with .Favicon.ICOBase64 }}{{- $Favicon_ICOBase64 = . }}{{ end -}}
-
-{{- with .MSTile.ApplicationName }}{{- $MSTile_ApplicationName = . }}{{ end -}}
-{{- with .MSTile.X70 }}{{- $MSTile_X70 = . }}{{ end -}}
-{{- with .MSTile.X144 }}{{- $MSTile_X144 = . }}{{ end -}}
-{{- with .MSTile.X150 }}{{- $MSTile_X150 = . }}{{ end -}}
-{{- with .MSTile.WideX150 }}{{- $MSTile_WideX150 = . }}{{ end -}}
-{{- with .MSTile.X310 }}{{- $MSTile_X310 = . }}{{ end -}}
-{{- with .MSTile.TileColor }}{{- $MSTile_TileColor = . }}{{ end -}}
-{{- with .MSTile.BrowserConfig }}{{- $MSTile_BrowserConfig = . }}{{ end -}}
-
-
-{{- with .AndroidChrome.Name }}{{- $AndroidChrome_Name = . }}{{ end -}}
-{{- with .AndroidChrome.X192 }}{{- $AndroidChrome_X192 = . }}{{ end -}}
-{{- with .AndroidChrome.X512 }}{{- $AndroidChrome_X512 = . }}{{ end -}}
-{{- with .AndroidChrome.ThemeColor }}{{- $AndroidChrome_ThemeColor = . }}{{ end -}}
-{{- with .AndroidChrome.BackgroundColor }}{{- $AndroidChrome_BackgroundColor = . }}{{ end -}}
-{{- with .AndroidChrome.Webmanifest }}{{- $AndroidChrome_Webmanifest = . }}{{ end -}}
-
-{{- end -}} {{- /* with site.Data.plugin_favicons */ -}}
+{{- $Parameters = merge $Parameters . -}}
+{{- end -}}
 
 {{- /**********************************************
   Override the default/plugin parameter values with
@@ -105,76 +74,8 @@
   *************************************************/ -}}
 
 {{- with (index site.Data "plugin-favicons") -}}
-
-{{- with .Config.Version }}{{ $Config_Version = . }}{{ end -}}
-{{- if (isset .Config "DebugPrint") }}{{ $Config_DebugPrint = .Config.DebugPrint }}{{ end -}}
-
-{{- with .Apple.ThemeColor }}{{- $Apple_ThemeColor = . }}{{ end -}}
-{{- with .Apple.TouchIcon }}{{- $Apple_TouchIcon = . }}{{ end -}}
-{{- with .Apple.X57 }}{{- $Apple_x57 = . }}{{ end -}}
-{{- with .Apple.X114 }}{{- $Apple_x114 = . }}{{ end -}}
-{{- with .Apple.X72 }}{{- $Apple_x72 = . }}{{ end -}}
-{{- with .Apple.X144 }}{{- $Apple_x144 = . }}{{ end -}}
-{{- with .Apple.X60 }}{{- $Apple_x60 = . }}{{ end -}}
-{{- with .Apple.X120 }}{{- $Apple_x120 = . }}{{ end -}}
-{{- with .Apple.X76 }}{{- $Apple_x76 = . }}{{ end -}}
-{{- with .Apple.X152 }}{{- $Apple_x152 = . }}{{ end -}}
-{{- with .Apple.SafariPinnedTab }}{{- $Apple_SafariPinnedTab = . }}{{ end -}}
-
-{{- with .Favicon.SVG }}{{- $Favicon_SVG = . }}{{ end -}}
-{{- with .Favicon.X196 }}{{- $Favicon_X196 = . }}{{ end -}}
-{{- with .Favicon.X128 }}{{- $Favicon_X128 = . }}{{ end -}}
-{{- with .Favicon.X96 }}{{- $Favicon_X96 = . }}{{ end -}}
-{{- with .Favicon.X32 }}{{- $Favicon_X32 = . }}{{ end -}}
-{{- with .Favicon.X16 }}{{- $Favicon_X16 = . }}{{ end -}}
-{{- with .Favicon.ICO }}{{- $Favicon_ICO = . }}{{ end -}}
-{{- with .Favicon.ICOBase64 }}{{- $Favicon_ICOBase64 = . }}{{ end -}}
-
-{{- with .MSTile.ApplicationName }}{{- $MSTile_ApplicationName = . }}{{ end -}}
-{{- with .MSTile.X70 }}{{- $MSTile_X70 = . }}{{ end -}}
-{{- with .MSTile.X144 }}{{- $MSTile_X144 = . }}{{ end -}}
-{{- with .MSTile.X150 }}{{- $MSTile_X150 = . }}{{ end -}}
-{{- with .MSTile.WideX150 }}{{- $MSTile_WideX150 = . }}{{ end -}}
-{{- with .MSTile.X310 }}{{- $MSTile_X310 = . }}{{ end -}}
-{{- with .MSTile.TileColor }}{{- $MSTile_TileColor = . }}{{ end -}}
-{{- with .MSTile.BrowserConfig }}{{- $MSTile_BrowserConfig = . }}{{ end -}}
-
-
-{{- with .AndroidChrome.Name }}{{- $AndroidChrome_Name = . }}{{ end -}}
-{{- with .AndroidChrome.X192 }}{{- $AndroidChrome_X192 = . }}{{ end -}}
-{{- with .AndroidChrome.X512 }}{{- $AndroidChrome_X512 = . }}{{ end -}}
-{{- with .AndroidChrome.ThemeColor }}{{- $AndroidChrome_ThemeColor = . }}{{ end -}}
-{{- with .AndroidChrome.BackgroundColor }}{{- $AndroidChrome_BackgroundColor = . }}{{ end -}}
-{{- with .AndroidChrome.Webmanifest }}{{- $AndroidChrome_Webmanifest = . }}{{ end -}}
-
-{{- end -}} {{- /* with (index site.Data "plugin-favicons") */ -}}
-
-{{- /**************************************************
-  Construct the intermediate maps (mostly for clarity).
-  
-  The map inserted into the page scratch will have the 
-  following key structure:
-  
-  Config
-  *********************************************************/ -}}
-
-{{- /* Config */ -}}
-{{- $Config := dict "Version" $Config_Version "DebugPrint" $Config_DebugPrint -}}
-
-{{- /* Apple */ -}}
-{{- $Apple := dict "ThemeColor" $Apple_ThemeColor "TouchIcon" $Apple_TouchIcon "X57" $Apple_x57 "X114" $Apple_x114 "X72" $Apple_x72 "X144" $Apple_x144 "X60" $Apple_x60 "X120" $Apple_x120 "X76" $Apple_x76 "X152" $Apple_x152 "SafariPinnedTab" $Apple_SafariPinnedTab -}}
-
-{{- /* Favicon */ -}}
-{{- $Favicon := dict "SVG" $Favicon_SVG "X196" $Favicon_X196 "X128" $Favicon_X128 "X96" $Favicon_X96 "X32" $Favicon_X32 "X16" $Favicon_X16 "ICO" $Favicon_ICO "ICOBase64" $Favicon_ICOBase64 -}}
-
-{{- /* MSTile */ -}}
-{{- $MSTile := dict "ApplicationName" $MSTile_ApplicationName "X70" $MSTile_X70 "X144" $MSTile_X144 "X150" $MSTile_X150 "WideX150" $MSTile_WideX150 "X310" $MSTile_X310 "TileColor" $MSTile_TileColor "BrowserConfig" $MSTile_BrowserConfig -}}
-
-{{- /* AndroidChrome */ -}}
-{{- $AndroidChrome := dict "Name" $AndroidChrome_Name "X192" $AndroidChrome_X192 "X512" $AndroidChrome_X512 "ThemeColor" $AndroidChrome_ThemeColor "BackgroundColor" $AndroidChrome_BackgroundColor "Webmanifest" $AndroidChrome_Webmanifest -}}
-
-{{- /* Parameters */ -}}
-{{- $Parameters := dict "Config" $Config "Apple" $Apple "Favicon" $Favicon "MSTile" $MSTile "AndroidChrome" $AndroidChrome -}}
+{{- $Parameters = merge $Parameters . -}}
+{{- end -}}
 
 {{- /********************************************
   Insert the parameter map into the page scratch.
