@@ -1,7 +1,7 @@
 {
     "version": "5.0.0",
     "title": "Moondeer's Favicons",
-    "description": "A plugin for injecting favicon metadata.",
+    "description": "A plugin for injecting favicon metadata. An updated README is on the way. See the documented configuration files in the plugin's data directory for plugin parameters and feel free to holler at me with any questions.",
     "includes": [
       "plugin-favicons/injection.html"
     ]
